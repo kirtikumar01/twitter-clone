@@ -88,7 +88,7 @@ const PostPage = ({trendingResults,followResults,providers}) => {
 export default PostPage
 
 
-export async function getServerSideProps(context:any) {
+export async function getServerSideProps(context) {
     const trendingResults = await fetch("https://jsonkeeper.com/b/NKEV").then(
       (res) => res.json()
     );

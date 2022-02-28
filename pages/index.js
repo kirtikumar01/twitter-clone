@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+// import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Feed from '../components/Feed'
@@ -11,7 +11,7 @@ import { modalState } from '../atoms/modalAtom'
 import Widgets from '../components/Widgets'
 
 
-const Home: NextPage = ({trendingResults,followResults,providers}) => {
+const Home = ({trendingResults,followResults,providers}) => {
 
   const { data: session } = useSession()
   const[isOpen, setIsOpen] = useRecoilState(modalState)
@@ -38,7 +38,7 @@ const Home: NextPage = ({trendingResults,followResults,providers}) => {
 
 export default Home
 
-export async function getServerSideProps(context:any) {
+export async function getServerSideProps(context) {
   const trendingResults = await fetch("https://jsonkeeper.com/b/NKEV").then(
     (res) => res.json()
   );

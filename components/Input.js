@@ -23,12 +23,12 @@ const Input = () => {
     const[loading, setLoading] = useState(false);
     const filePickerRef = useRef()
 
-    const addImageToPost = (e:any) => {
+    const addImageToPost = (e) => {
         const reader = new FileReader();
         if(e.target.files[0]){
             reader.readAsDataURL(e.target.files[0])
         }
-        reader.onload = (readerEvent:any) =>{
+        reader.onload = (readerEvent) =>{
             setSelectedFile(readerEvent.target?.result)
         }
     }
@@ -61,10 +61,10 @@ const Input = () => {
             setShowEmojis(false);
         }
 
-    const addEmoji = (e:any) => {
+    const addEmoji = (e) => {
         let sym = e.unified.split("-");
-        let codesArray: any = [];
-        sym.forEach((el:any) => codesArray.push("0x" + el));
+        let codesArray = [];
+        sym.forEach((el) => codesArray.push("0x" + el));
         let emoji = String.fromCodePoint(...codesArray);
         setInput(input + emoji);
       };

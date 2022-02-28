@@ -38,7 +38,7 @@ function Modal() {
     [db]
   );
 
-  const sendComment = async (e:any) => {
+  const sendComment = async (e) => {
     e.preventDefault();
 
     await addDoc(collection(db,'posts',postId,"commentss"),{
